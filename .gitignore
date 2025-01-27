@@ -1,0 +1,38 @@
+# Node.js
+node_modules/
+
+# Debug log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env.*
+
+# Logs
+logs
+*.log
+*.log.*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDEs and text editors
+.vscode/
+.idea/
+
+# Dependency directories for other tools (if used)
+jspm_packages/
+
+# Coverage directory used by testing tools
+coverage/
+
+# Build output directories (for front-end build tools)
+dist/
+build/
+
+# Temporary files
+*.swp
+*.swo
