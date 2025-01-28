@@ -11,7 +11,7 @@ class District extends Model {
 District.init({
 
 
-    districId: {
+    districtId: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true
@@ -21,7 +21,7 @@ District.init({
         allowNull: false
     },
     stateId: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.INTEGER, 
         allowNull: false
     }
 

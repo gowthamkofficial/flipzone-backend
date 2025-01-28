@@ -6,10 +6,13 @@ require('dotenv').config()
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsDoc = require('swagger-jsdoc');
 const masterRouter = require('./src/routes/master.route');
+const userRouter = require('./src/routes/user.route');
+const productRouter = require('./src/routes/product.route');
+const cartRouter = require('./src/routes/cart.route');
 
 
 
-// addStates();
+// addStates();  
 
 const swaggerOptions = {
     definition: {
@@ -24,6 +27,20 @@ const swaggerOptions = {
                 url: 'http://localhost:4000', // Update based on your server's URL
             },
         ],
+        components: {
+            securitySchemes: {
+                bearerAuth: {
+                    type: 'http',
+                    scheme: 'bearer',
+                    bearerFormat: 'JWT',
+                },
+            },
+        },
+        security: [
+            {
+                bearerAuth: [],
+            },
+        ],
     },
     apis: ['./src/routes/**/*.js'], // Path to the API docs
 };
@@ -31,8 +48,11 @@ const swaggerOptions = {
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
-
+app.use(express.json());
 app.use('/', masterRouter);
+app.use('/',userRouter)  ;
+app.use('/',productRouter);
+app.use('/',cartRouter);
 
 
 (async () => {

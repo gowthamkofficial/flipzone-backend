@@ -7,8 +7,8 @@ const State = require("./state.model");
 const syncTables = async () => {
 
     try {
-        await sequelize.sync({ force: false }); // Set to `true` to drop and recreate tables
-        console.log('All tables synced successfully.');
+        await sequelize.sync({ force: false ,alter:true}); // Set to `true` to drop and recreate tables
+        console.log('All tables synced successfully.'); 
     } catch (error) {
         console.error('Error syncing tables:', error.message);
     }

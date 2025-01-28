@@ -23,7 +23,7 @@ class FailureResponse extends BaseResponse {
     error
     constructor(status, statusCode, message, error) {
         super(status, statusCode, message)
-        this.error = data;
+        this.error = error;
     }
 }
 
